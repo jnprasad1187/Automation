@@ -1,0 +1,12 @@
+interface range GigabitEthernet 3/0 - 3
+ description END USER HOST ACCESS PORTS
+ switchport
+ switchport access vlan 104
+ switchport voice vlan 112
+ switchport host
+ switchport port-security maximum 2
+ switchport port-security
+ switchport port-security aging time 2
+ switchport port-security aging type inactivity
+ switchport port-security violation restrict
+ no shutdown
