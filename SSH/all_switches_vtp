@@ -1,0 +1,7 @@
+vtp version 3
+vtp mode transparent
+vtp domain CCIE40013
+vtp password cisco hidden
+
+
+
