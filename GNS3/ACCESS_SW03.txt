@@ -1,0 +1,148 @@
+!
+version 15.2
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+service compress-config
+!
+hostname ACCESS-SW03
+!
+boot-start-marker
+boot-end-marker
+!
+username cisco privilege 15 secret 0 cisco
+no aaa new-model
+!
+vtp mode transparent
+!
+no ip domain-lookup
+ip domain-name ccie40013.com
+ip cef
+no ipv6 cef
+!
+spanning-tree mode rapid-pvst
+spanning-tree extend system-id
+!
+vlan internal allocation policy ascending
+!
+interface GigabitEthernet0/1
+ no shutdown
+ description L2 to CORE-SW01
+ media-type rj45
+ negotiation auto
+!
+interface GigabitEthernet0/2
+ no shutdown
+ description L2 to CORE-SW02
+ media-type rj45
+ negotiation auto
+!
+interface GigabitEthernet0/3
+ shutdown
+ media-type rj45
+ negotiation auto
+!
+interface GigabitEthernet0/0
+ no shutdown
+ description To Local LAN using CLOUD
+ no switchport
+ ip address 192.168.86.247 255.255.255.0
+ negotiation auto
+!
+interface GigabitEthernet1/0
+ shutdown
+ media-type rj45
+ negotiation auto
+!
+interface GigabitEthernet1/1
+ shutdown
+ media-type rj45
+ negotiation auto
+!
+interface GigabitEthernet1/2
+ shutdown
+ media-type rj45
+ negotiation auto
+!
+interface GigabitEthernet1/3
+ shutdown
+ media-type rj45
+ negotiation auto
+!
+interface GigabitEthernet2/0
+ shutdown
+ media-type rj45
+ negotiation auto
+!
+interface GigabitEthernet2/1
+ shutdown
+ media-type rj45
+ negotiation auto
+!
+interface GigabitEthernet2/2
+ shutdown
+ media-type rj45
+ negotiation auto
+!
+interface GigabitEthernet2/3
+ shutdown
+ media-type rj45
+ negotiation auto
+!
+interface GigabitEthernet3/0
+ no shutdown
+ description FOR END HOSTS
+ media-type rj45
+ negotiation auto
+!
+interface GigabitEthernet3/1
+ no shutdown
+ description FOR END HOSTS
+ media-type rj45
+ negotiation auto
+!
+interface GigabitEthernet3/2
+ no shutdown
+ description FOR END HOSTS
+ media-type rj45
+ negotiation auto
+!
+interface GigabitEthernet3/3
+ no shutdown
+ description FOR END HOSTS
+ media-type rj45
+ negotiation auto
+!
+ip forward-protocol nd
+!
+no ip http server
+no ip http secure-server
+!
+ip route 0.0.0.0 0.0.0.0 192.168.86.1
+ip ssh time-out 60
+ip ssh authentication-retries 2
+ip ssh version 2
+!
+control-plane
+!
+line con 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+!
+line vty 0 15
+ exec-timeout 0 0
+ logging synchronous
+ login local
+ transport input ssh
+!
+crypto key generate rsa modulus 2048
+!
+
+
+
+end
+!
+wr
+!
+

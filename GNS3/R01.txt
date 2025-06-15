@@ -1,0 +1,106 @@
+!
+version 15.7
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname R01
+!
+boot-start-marker
+boot-end-marker
+!
+no aaa new-model
+!
+mmi polling-interval 60
+no mmi auto-configure
+no mmi pvc
+mmi snmp-timeout 180
+!
+no ip icmp rate-limit unreachable
+!
+no ip domain lookup
+ip domain name ccie40013.com
+ip cef
+no ipv6 cef
+!
+multilink bundle-name authenticated
+!
+username cisco privilege 15 secret 0 cisco
+!
+redundancy
+!
+no cdp log mismatch duplex
+!
+ip tcp synwait-time 5
+!
+interface GigabitEthernet0/0
+ no shutdown
+ description To Local LAN using CLOUD
+ ip address 192.168.86.241 255.255.255.0
+ duplex auto
+ speed auto
+ media-type rj45
+!
+interface GigabitEthernet0/1
+ no shutdown
+ description L3 to CORE-SW01
+ no ip address
+ duplex auto
+ speed auto
+ media-type rj45
+!
+interface GigabitEthernet0/2
+ no shutdown
+ description L3 to ISP01
+ no ip address
+ duplex auto
+ speed auto
+ media-type rj45
+!
+interface GigabitEthernet0/3
+ no shutdown
+ description L3 to R02
+ no ip address
+ duplex auto
+ speed auto
+ media-type rj45
+!
+ip forward-protocol nd
+!
+no ip http server
+no ip http secure-server
+ip route 0.0.0.0 0.0.0.0 192.168.86.1
+ip ssh time-out 60
+ip ssh authentication-retries 2
+ip ssh version 2
+!
+ipv6 ioam timestamp
+!
+control-plane
+!
+line con 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+!
+line aux 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+!
+line vty 0 15
+ exec-timeout 0 0
+ logging synchronous
+ login local
+ transport input ssh
+!
+no scheduler allocate
+!
+crypto key generate rsa modulus 2048
+!
+
+
+end
+!
+wr
+!

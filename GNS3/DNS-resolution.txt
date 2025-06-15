@@ -1,0 +1,63 @@
+┌──(joseph㉿ubuntu-VirtualBox)-[~/Push_to_git_hub]
+└─$ nslookup        
+> _gateway
+Server:		127.0.0.53
+Address:	127.0.0.53#53
+
+Name:	_gateway
+Address: 192.168.86.1
+> ISP01
+Server:		127.0.0.53
+Address:	127.0.0.53#53
+
+Name:	ISP01
+Address: 192.168.86.251
+> ISP02
+Server:		127.0.0.53
+Address:	127.0.0.53#53
+
+Name:	ISP02
+Address: 192.168.86.252
+> R01
+Server:		127.0.0.53
+Address:	127.0.0.53#53
+
+Name:	R01
+Address: 192.168.86.241
+> R02
+Server:		127.0.0.53
+Address:	127.0.0.53#53
+
+Name:	R02
+Address: 192.168.86.242
+> CORE-SW01
+Server:		127.0.0.53
+Address:	127.0.0.53#53
+
+Name:	CORE-SW01
+Address: 192.168.86.243
+> CORE-SW02
+Server:		127.0.0.53
+Address:	127.0.0.53#53
+
+Name:	CORE-SW02
+Address: 192.168.86.244
+> ACCESS-SW01
+Server:		127.0.0.53
+Address:	127.0.0.53#53
+
+Name:	ACCESS-SW01
+Address: 192.168.86.245
+> ACCESS-SW02
+Server:		127.0.0.53
+Address:	127.0.0.53#53
+
+Name:	ACCESS-SW02
+Address: 192.168.86.246
+> ACCESS-SW03
+Server:		127.0.0.53
+Address:	127.0.0.53#53
+
+Name:	ACCESS-SW03
+Address: 192.168.86.247
+> 

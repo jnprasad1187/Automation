@@ -1,0 +1,36 @@
+!
+
+
+root@UbuntuDockerGuest-1:/etc# cat /etc/network/interfaces
+#
+# This is a sample network config, please uncomment lines to configure the network
+#
+
+# Uncomment this line to load custom interface files
+# source /etc/network/interfaces.d/*
+
+# Static config for eth0
+#auto eth0
+#iface eth0 inet static
+#       address 192.168.0.2
+#       netmask 255.255.255.0
+#       gateway 192.168.0.1
+#       up echo nameserver 192.168.0.1 > /etc/resolv.conf
+
+# DHCP config for eth0
+#auto eth0 <--------------------- UNCOMMENT THIS
+#iface eth0 inet dhcp <--------------------- UNCOMMENT THIS
+root@UbuntuDockerGuest-1:/etc#
+
+root@NetworkAutomation02-1:~# nano /etc/hosts
+!
+192.168.122.XXX = DHCP = Network automator
+192.168.122.241 R0
+192.168.122.242 R1
+192.168.122.243 SW1
+192.168.122.244 SW2
+192.168.122.245 SW3
+192.168.122.246 SW4
+192.168.122.247 SW5
+192.168.122.251 WAN01
+192.168.122.252 WAN02
