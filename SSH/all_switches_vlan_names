@@ -1,0 +1,50 @@
+vlan 101 
+name Marketing
+vlan 102 
+name Sales
+vlan 103 
+name Human Resources
+vlan 104 
+name IT_Operations
+vlan 105 
+name Accounting
+vlan 106 
+name Engineering
+vlan 107 
+name Guest WiFi
+vlan 108 
+name Executive
+vlan 109 
+name Data Center
+vlan 110 
+name Server Room
+vlan 111 
+name Wireless
+vlan 112 
+name Voice
+vlan 113 
+name Security
+vlan 114 
+name Production
+vlan 115 
+name Testing
+vlan 116 
+name Development
+vlan 117 
+name Training
+vlan 118 
+name R&D
+vlan 119 
+name Admin
+vlan 120 
+name Cloud
+vlan 121 
+name VoIP
+vlan 122 
+name Print Servers
+vlan 123 
+name Storage
+vlan 124 
+name Network
+vlan 125 
+name Audio_Video
